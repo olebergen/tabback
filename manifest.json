@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "tabback",
+  "version": "1.0",
+  "description": "Switch back to the last tab",
+  "icons": {
+    "24": "icons/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [],
+      "match_about_blank": true
+    }
+  ],
+  "background": {
+    "scripts": ["tabback.js"]
+  },
+  "permissions": ["<all_urls>", "tabs", "storage"],
+  "commands": {
+    "switch-last-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Space",
+        "mac": "Ctrl+Space"
+      },
+      "description": "Switch back to the last tab"
+    }
+  }
+}
